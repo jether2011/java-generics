@@ -22,4 +22,8 @@ public class Instrument<E> {
 	public boolean hasInstrument() {
 		return !instruments.isEmpty();
 	}
+	
+	public int getSize() {
+		return instruments.size();
+	}
 }

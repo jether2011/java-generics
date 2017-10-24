@@ -15,14 +15,14 @@ public class DataProcessor {
 		piezometer.add(new Piezometer("123780"));
 		
 		int pluPosition = 0;
-		while (pluviometer.hasInstrument()) {
+		while (pluPosition < pluviometer.getSize()) {
 			System.out.println("Pluviometer number [ " + pluviometer.getInstrument(pluPosition).getSerial() + " ]");
 			pluPosition ++;
 		}
 		
 		int piePosition = 0;
-		while (piezometer.hasInstrument()) {
-			System.out.println("Piezometer number [ " + piezometer.getInstrument(piePosition) + " ]");
+		while (piePosition < piezometer.getSize()) {
+			System.out.println("Piezometer number [ " + piezometer.getInstrument(piePosition).getSerial() + " ]");
 			piePosition ++;
 		}
 		
