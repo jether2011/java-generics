@@ -1,6 +1,7 @@
 package com.jetherrodrigues.generics;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Instrument<E> {
@@ -25,5 +26,11 @@ public class Instrument<E> {
 	
 	public int getSize() {
 		return instruments.size();
+	}
+	
+	public void addAll(Collection<? extends E> instruments) {
+		for (E e : instruments) {
+			add(e);
+		}
 	}
 }

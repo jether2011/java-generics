@@ -1,11 +1,11 @@
 package com.jetherrodrigues.generics;
 
-public class Piezometer {
-	private String serial;
-	private String clazz;
-
-	public Piezometer(String serial) {
+public class PluviometerStation extends Pluviometer{
+	private String sensor;
+	
+	public PluviometerStation(String serial, String sensor) {
 		this.serial = serial;
+		this.sensor = sensor;
 		this.clazz = this.getClass().getName();
 	}
 
@@ -16,7 +16,15 @@ public class Piezometer {
 	public void setSerial(String serial) {
 		this.serial = serial;
 	}
-	
+
+	public String getSensor() {
+		return sensor;
+	}
+
+	public void setSensor(String sensor) {
+		this.sensor = sensor;
+	}
+
 	public String getClazz() {
 		return clazz;
 	}
@@ -29,4 +37,5 @@ public class Piezometer {
 	public String toString() {
 		return GsonSingleton.getInstance().toJson(this);
 	}
+	
 }

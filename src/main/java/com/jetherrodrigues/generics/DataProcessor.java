@@ -1,5 +1,8 @@
 package com.jetherrodrigues.generics;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DataProcessor {
 	public static void main(String[] args) {
 		Instrument<Pluviometer> pluviometer = new Instrument<>();
@@ -7,6 +10,13 @@ public class DataProcessor {
 		pluviometer.add(new Pluviometer("123457"));
 		pluviometer.add(new Pluviometer("123458"));
 		pluviometer.add(new Pluviometer("123459"));
+		
+		List<PluviometerStation> pluviometers = new ArrayList<>();
+		pluviometers.add(new PluviometerStation("111111", "CHUVA"));
+		pluviometers.add(new PluviometerStation("111122", "TEMPERATURA"));
+		pluviometers.add(new PluviometerStation("111133", "VENTO"));
+		
+		pluviometer.addAll(pluviometers);
 		
 		Instrument<Piezometer> piezometer = new Instrument<>();
 		piezometer.add(new Piezometer("123777"));
@@ -16,13 +26,13 @@ public class DataProcessor {
 		
 		int pluPosition = 0;
 		while (pluPosition < pluviometer.getSize()) {
-			System.out.println("Pluviometer number [ " + pluviometer.getInstrument(pluPosition).getSerial() + " ]");
+			System.out.printf(" %s \n", pluviometer.getInstrument(pluPosition).toString());
 			pluPosition ++;
 		}
 		
 		int piePosition = 0;
 		while (piePosition < piezometer.getSize()) {
-			System.out.println("Piezometer number [ " + piezometer.getInstrument(piePosition).getSerial() + " ]");
+			System.out.printf(" %s \n", piezometer.getInstrument(piePosition).toString());
 			piePosition ++;
 		}
 		
